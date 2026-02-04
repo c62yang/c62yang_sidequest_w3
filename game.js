@@ -105,6 +105,11 @@ function gameKeyPressed() {
   if (keyCode === ENTER) {
     triggerRandomOutcome();
   }
+
+  if (key === "q" || key === "Q") {
+    resetSideQuest()
+    currentScreen = "sidequest"
+  }
 }
 
 // ------------------------------

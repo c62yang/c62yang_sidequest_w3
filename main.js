@@ -23,6 +23,11 @@
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
+let endingsUnlocked = {
+  good: false,
+  neutral: false,
+  bad: false
+}
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------
@@ -51,6 +56,7 @@ function draw() {
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
+    else if (currentScreen === "sidequest") drawSideQuest()
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "lose") drawLose();
 
@@ -78,6 +84,7 @@ function mousePressed() {
   else if (currentScreen === "game") gameMousePressed();
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
+  else if (currentScreen === "sidequest") sideQuestMousePressed()
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
 }
@@ -97,6 +104,7 @@ function keyPressed() {
   if (currentScreen === "start") startKeyPressed();
   else if (currentScreen === "instr") instrKeyPressed();
   else if (currentScreen === "game") gameKeyPressed?.();
+  else if (currentScreen === "sidequest") sideQuestKeyPressed()
   else if (currentScreen === "win") winKeyPressed?.();
   else if (currentScreen === "lose") loseKeyPressed?.();
 }
