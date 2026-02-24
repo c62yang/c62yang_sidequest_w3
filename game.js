@@ -27,8 +27,7 @@ const gameBtn = {
 // when currentScreen === "game"
 function drawGame() {
   // Set background colour for the game screen
-  background(240, 230, 140);
-
+  background(205, 231, 190);
   // ---- Title and instructions text ----
   fill(0); // black text
   textSize(32);
@@ -113,7 +112,7 @@ function gameKeyPressed() {
 }
 
 // ------------------------------
-// Game logic: win or lose
+// Game logic: good or bad karma
 // ------------------------------
 // This function decides what happens next in the game.
 // It does NOT draw anything.
